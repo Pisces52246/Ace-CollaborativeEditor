@@ -1,0 +1,6 @@
+Ace-Collaborative Editor
+===================================
+Welcome!
+Type anything in here, and other users will see it!
+Open this page in another browser window to see it changing live yourself!
+
