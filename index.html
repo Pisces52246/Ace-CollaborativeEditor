@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html charset="UTF-8">
+<title>Ace-Collaborative Editor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
+.w3-third img:hover{opacity: 1}
+</style>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+  <h3 class="w3-padding-64 w3-center"><b>ACE<br>Collaborative<br>Editor</b></h3>
+  <!-- <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a> -->
+  <a href="#hello" onclick="w3_close()" class="w3-bar-item w3-button">HELLO.js</a> 
+  <a href="#file3" onclick="w3_close()" class="w3-bar-item w3-button">RENAME</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Start page content -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Push down content on small screens --> 
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+
+  <!-- Editor section -->
+  <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="hello">
+    <h4><b>Start Your Coding</b></h4>
+
+    <style type="text/css" media="screen">
+     body {
+         overflow: hidden;
+     }
+     #editor {
+         margin: 0;
+         position: relative;
+         top: 20px;
+         bottom: 0;
+         left: 0;
+         right: 00%;
+         height: 720px;
+     }
+    </style>
+    <pre id="editor"></pre>
+  
+  <script src="static/ace.js"></script>
+  <script src="static/mode-javascript.js"></script>
+  <script src="static/theme-twilight.js"></script>
+  <script src="./build/bundle.js"></script> 
+  </div>
+
+
+  
+
+  <!-- Rename section -->
+  <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="file3">
+    <div class="w3-content" style="max-width:600px">
+      <h4 class="w3-center"><b>Input Filename</b></h4>
+      
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-section">
+                    <input class="w3-input w3-border" type="text" name="Name" required>
+        </div>
+        <button type="submit" class="w3-button w3-block w3-black w3-marsgin-bottom">OK</button>
+      </form>
+    </div>
+  </div>
+
+  
+  
+  <div class="w3-black w3-center w3-padding-24">Designed by Pisces</div>
+
+<!-- End page content -->
+</div>
+
+
+
+
+  <script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+</script>
+
+</body>
+
+</html>
