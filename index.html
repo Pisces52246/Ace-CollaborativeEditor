@@ -15,7 +15,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
   <h3 class="w3-padding-64 w3-center"><b>ACE<br>Collaborative<br>Editor</b></h3>
   <!-- <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a> -->
-  <a href="#hello" onclick="w3_close()" class="w3-bar-item w3-button">HELLO.js</a> 
+  <a href="#hello" id="navFile" onclick="w3_close()" class="w3-bar-item w3-button">HELLO.js</a> 
   <a href="#file3" onclick="w3_close()" class="w3-bar-item w3-button">RENAME</a>
 </nav>
 
@@ -63,12 +63,12 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div class="w3-content" style="max-width:600px">
       <h4 class="w3-center"><b>Input Filename</b></h4>
       
-      <form action="/action_page.php" target="_blank">
+      <!-- <form onsubmit="onClick()" target="_blank"> -->
         <div class="w3-section">
-                    <input class="w3-input w3-border" type="text" name="Name" required>
+                <input id="newName" class="w3-input w3-border" type="text" name="Name" required>
         </div>
-        <button type="submit" class="w3-button w3-block w3-black w3-marsgin-bottom">OK</button>
-      </form>
+        <button onclick="onClick()" class="w3-button w3-block w3-black w3-marsgin-bottom">OK</button>
+      <!-- </form> -->
     </div>
   </div>
 
@@ -95,11 +95,11 @@ function w3_close() {
 }
 
 // Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
+function onClick() {
+  
+  var x = document.getElementById("newName").value;
+    document.getElementById("navFile").innerHTML = x;
+  
 }
 
 </script>
